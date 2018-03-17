@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Sites>
+  <Site>
+      <Url>https://www.oschadbank.ua/ua/</Url>
+      <BuyMoneysUrl>
+           <USD>/html/body/div[3]/div[4]/main/section[2]/div/div/div/div[1]/div/div[1]/span[2]/strong[1]</USD>
+           <EUR>/html/body/div[3]/div[4]/main/section[2]/div/div/div/div[1]/div/div[2]/span[2]/strong[1]</EUR>
+           <RUB>/html/body/div[3]/div[4]/main/section[2]/div/div/div/div[1]/div/div[3]/span[2]/strong[1]</RUB>
+      </BuyMoneysUrl>
+      <SellMoneyUrl>
+          <USD>/html/body/div[3]/div[4]/main/section[2]/div/div/div/div[1]/div/div[1]/span[2]/strong[2]</USD>
+          <EUR>/html/body/div[3]/div[4]/main/section[2]/div/div/div/div[1]/div/div[2]/span[2]/strong[2]</EUR>
+          <RUB>/html/body/div[3]/div[4]/main/section[2]/div/div/div/div[1]/div/div[3]/span[2]/strong[2]</RUB>
+      </SellMoneyUrl>
+  </Site>
+</Sites>
