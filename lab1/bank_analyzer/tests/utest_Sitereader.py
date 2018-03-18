@@ -19,7 +19,7 @@ class SitereaderTest(unittest.TestCase):
         self.urls.append('/html/body/div[2]/div[2]/div[1]/div[3]/div/div[2]/div[3]/div[1]/table/tbody/tr[3]/td[3]')
 
     def test_getSitesfromXml(self):
-        sites = getSitesfromXml("../files/site.xml")
+        sites = getSitesfromXml("../../files/site.xml")
         site = sites[0]
         self.assertEqual(site.site_url, "https://alfabank.ua/")
         self.assertEqual(site.buyUsd_url,
