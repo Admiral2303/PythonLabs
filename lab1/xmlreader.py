@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 from Site import Site
+from lxml import etree
 
 
 def getSitesfromXml(file):
@@ -30,9 +31,19 @@ def getSitesfromXml(file):
         sites.append(site)
     return sites
 
-
-
-
-# n = getSitesfromXml('example.xml')
-# for x in n:
-#     print(x.sellRub_url)
+def writeSitesToXml(data, file):
+    root = etree.Element("xml")
+    doc = etree.SubElement(root, "exchange-courses")
+    for i in data:
+        bankName = etree.SubElement(doc, "bank")
+        etree.SubElement(bankName, "Url").text = i.site_url
+        buy = etree.SubElement(bankName, "buy")
+        etree.SubElement(buy, "RUB").text = i.buyRub
+        etree.SubElement(buy, "EUR").text = i.buyEur
+        etree.SubElement(buy, "USD").text = i.buyUsd
+        sell = etree.SubElement(bankName, "sell")
+        etree.SubElement(sell, "RUB").text = i.sellRub
+        etree.SubElement(sell, "EUR").text = i.sellEur
+        etree.SubElement(sell, "USD").text = i.sellUsd
+    tree = etree.ElementTree(root)
+    tree.write(file, pretty_print=True)
