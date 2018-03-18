@@ -20,6 +20,7 @@ def getExRatefromHtml(html, xpath):
     obj = html.xpath(xpath)
     return obj[0].text.strip()
 
+
 def createExchangeRate(site):
     html = getSitehtml(site.site_url)
     ex_rate = ExchangeRate(site.site_url,
@@ -30,3 +31,4 @@ def createExchangeRate(site):
                            getExRatefromHtml(html, site.sellEur_url),
                            getExRatefromHtml(html, site.sellRub_url))
     return ex_rate
+
