@@ -1,0 +1,30 @@
+<xml>
+  <exchange-courses>
+    <bank>
+      <Url>https://www.oschadbank.ua/ua/</Url>
+      <buy>
+        <RUB>0,3100</RUB>
+        <EUR>32,0000</EUR>
+        <USD>26,1500</USD>
+      </buy>
+      <sell>
+        <RUB>0,4680</RUB>
+        <EUR>32,9000</EUR>
+        <USD>26,8000</USD>
+      </sell>
+    </bank>
+    <bank>
+      <Url>https://alfabank.ua/</Url>
+      <buy>
+        <RUB>0.442</RUB>
+        <EUR>32.45</EUR>
+        <USD>26.45</USD>
+      </buy>
+      <sell>
+        <RUB>0.472</RUB>
+        <EUR>33.05</EUR>
+        <USD>26.75</USD>
+      </sell>
+    </bank>
+  </exchange-courses>
+</xml>

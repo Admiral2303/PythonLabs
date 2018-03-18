@@ -1,23 +1,28 @@
 import requests
 import urllib.error
 from lxml import html
-from ExchangeRate import ExchangeRate
-from Xmlprocess import getSitesfromXml
-from Xmlprocess import writeSitesToXml
+from bank_analyzer.ExchangeRate import ExchangeRate
+from bank_analyzer.Xmlprocess import getSitesfromXml
+from bank_analyzer.Xmlprocess import writeSitesToXml
 
 
 def getSitehtml(url):
+    root = ""
     try:
         r = requests.get(url)
+        root = html.fromstring(r.content)
     except urllib.error.URLError:
         print('Invalid URL({})'.format(url))
-    root = html.fromstring(r.content)
+        raise
     return root
 
 
-
 def getExRatefromHtml(html, xpath):
-    obj = html.xpath(xpath)
+    obj = ''
+    try:
+        obj = html.xpath(xpath)
+    except RuntimeError:
+        print("Html or xpath incorrect")
     return obj[0].text.strip()
 
 
@@ -32,3 +37,10 @@ def createExchangeRate(site):
                            getExRatefromHtml(html, site.sellRub_url))
     return ex_rate
 
+
+# exs = []
+# for ex in getSitesfromXml("./files/example.xml"):
+#     ex1 = createExchangeRate(ex)
+#     exs.append(ex1)
+#
+# writeSitesToXml(exs, "./files/res1.xml")
