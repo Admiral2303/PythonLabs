@@ -10,6 +10,6 @@ install:
   - pip install codecov
   - pip install -r requirements.txt
 # command to run tests
-script: nosetests .\lab1\tests\utest_Sitereader.py --cover-branches --with-coverage --cover-erase --cover-package=bank_analyzer
+script: nosetests3 .\lab1\tests\utest_Sitereader.py --cover-branches --with-coverage --cover-erase --cover-package=bank_analyzer
 after_success:
 - codecov
