@@ -46,12 +46,12 @@ class SitereaderTest(unittest.TestCase):
 
     def test_getExRatefromHtml(self):
         html = getSitehtml("https://alfabank.ua/")
-        self.assertEqual(getExRatefromHtml(html, self.urls[0]), "26.45")
-        self.assertEqual(getExRatefromHtml(html, self.urls[1]), "32.45")
-        self.assertEqual(getExRatefromHtml(html, self.urls[2]), "0.442")
-        self.assertEqual(getExRatefromHtml(html, self.urls[3]), "26.75")
-        self.assertEqual(getExRatefromHtml(html, self.urls[4]), "33.05")
-        self.assertEqual(getExRatefromHtml(html, self.urls[5]), "0.472")
+        self.assertEqual(getExRatefromHtml(html, self.urls[0]), "26.55")
+        self.assertEqual(getExRatefromHtml(html, self.urls[1]), "32.42")
+        self.assertEqual(getExRatefromHtml(html, self.urls[2]), "0.445")
+        self.assertEqual(getExRatefromHtml(html, self.urls[3]), "26.65")
+        self.assertEqual(getExRatefromHtml(html, self.urls[4]), "32.8")
+        self.assertEqual(getExRatefromHtml(html, self.urls[5]), "0.473")
 
     def test_createExchangeRate(self):
         site = Site()
@@ -63,13 +63,14 @@ class SitereaderTest(unittest.TestCase):
         site.setsellEur(self.urls[4])
         site.setsellRub(self.urls[5])
         expected_exRate = createExchangeRate(site)
-        self.assertEqual(expected_exRate.buyUsd, '26.45')
-        self.assertEqual(expected_exRate.buyEur, '32.45')
-        self.assertEqual(expected_exRate.buyRub, '0.442')
-        self.assertEqual(expected_exRate.sellUsd, '26.75')
-        self.assertEqual(expected_exRate.sellEur, '33.05')
-        self.assertEqual(expected_exRate.sellRub, '0.472')
+        self.assertEqual(expected_exRate.buyUsd, '26.55')
+        self.assertEqual(expected_exRate.buyEur, '32.42')
+        self.assertEqual(expected_exRate.buyRub, '0.445')
+        self.assertEqual(expected_exRate.sellUsd, '26.65')
+        self.assertEqual(expected_exRate.sellEur, '32.8')
+        self.assertEqual(expected_exRate.sellRub, '0.473')
 
 
 if __name__ == '__main__':
     unittest.main()
+
